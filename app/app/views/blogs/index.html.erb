@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<div id = "top_nav">
+	<table>
+		<thead>
+			<th><%= link_to "sign out", destroy_user_session_path, :method =>:delete %></th>
+			
+		</thead>
+	</table>
+</div>
+<div id = "index">
+<h1> our blog </h1>
+<% @blog.each do |blog| %>
+<h2><%=link_to blog.title, blog %> </h2>
+<p><%=blog.content %> </p>
+<p><%=link_to "Edit", edit_blog_path(blog)%> 
+<%=link_to "Delete", blog, :method => :delete %></p>
+<hr />
+<% end %>
+
+<p><%= link_to "Add a new blog", new_blog_path %> </p>
+</div>
+</html>

@@ -1,0 +1,17 @@
+
+ 
+<p>
+	<b>Comments</b> <br/>
+  <b><%= comment.commenter %></b>
+  :
+  <%= comment.body %><br/>
+  <%= time_ago_in_words(comment.created_at)%>
+</p>
+
+<p>
+  <%= link_to 'Destroy Comment', [comment.blog, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>
+
+
